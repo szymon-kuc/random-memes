@@ -45,7 +45,7 @@ const bot = async () => {
                 }
         }
 
-        await download(bestMeme, 'meme2.png', function () {
+        await download(bestMeme, './public/meme2.png', function () {
             console.log('done');
         });
 
