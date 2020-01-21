@@ -25,7 +25,7 @@ const bot = async () => {
         const jeja = await browser.newPage();
 
         await jeja.goto('https://memy.jeja.pl/losowe', {waitUntil: 'networkidle2'});
-        await jeja.setDefaultNavigationTimeout(12000); 
+        await jeja.setDefaultNavigationTimeout(9000); 
 
 
 
@@ -50,14 +50,13 @@ const bot = async () => {
         });
 
         await browser.close();
+
     }
 
     catch (err){
         console.error("Perr: ", err.message);
         await browser.close();
-        bot();
     }  
-    
-};
+}; 
 
-bot();  
+module.exports = bot;
