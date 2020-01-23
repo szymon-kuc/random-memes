@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname,'public')))
 
 app.post("/call",(req,res,next)=>{
     bot();
-    setTimeout(()=>{res.redirect('/')}, 9000)
+    setTimeout(()=>{res.redirect('/')}, 4000)
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

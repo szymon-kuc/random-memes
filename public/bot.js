@@ -24,12 +24,10 @@ const bot = async () => {
     try {
         const jeja = await browser.newPage();
 
-        await jeja.goto('https://memy.jeja.pl/losowe', {waitUntil: 'networkidle2'});
-        await jeja.setDefaultNavigationTimeout(9000); 
+        await jeja.goto('https://memy.jeja.pl/losowe');
+        await jeja.setDefaultNavigationTimeout(4000); 
 
 
-
-        await jeja.reload({ waitUntil: ["networkidle0", "domcontentloaded"] });
         await jeja.waitForSelector('.ob-left-images');
         
         const memes = await jeja.$$eval('.ob-image-j', link => { return link.map(src => src.src).slice(0,8) });
